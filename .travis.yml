@@ -4,16 +4,16 @@ python:
 install:
 - pip install molecule-gce ansible==2.9.7 molecule<3 apache-libcloud
 script:
-  - ls -la
-  - molecule test --scenario-name gce
+- ls -la
+- molecule test --scenario-name gce
 after_script:
-  - molecule destroy --scenario-name gce
+- molecule destroy --scenario-name gce
 before_install:
-  - openssl aes-256-cbc -K $encrypted_7b81dd4d66f3_key -iv $encrypted_7b81dd4d66f3_iv
-    -in secrets.tar.enc -out secrets.tar -d
-  - tar xvf secrets.tar
-  - mv google_compute_engine /home/travis/.ssh/
-  - chmod 0600 /home/travis/.ssh/google_compute_engine
+- openssl aes-256-cbc -K $encrypted_3b9f0b9d36d1_key -iv $encrypted_3b9f0b9d36d1_iv
+  -in secrets.tar.enc -out secrets.tar -d
+- tar xvf secrets.tar
+- mv google_compute_engine /home/travis/.ssh/
+- chmod 0600 /home/travis/.ssh/google_compute_engine
 env:
   global:
   - secure: O5PPseyAsNgnmUC3nOSTWmSHVRlokcfd4vktcI34r2RsVaq444RnxN/R7RHmSGHsR7czb/j9AoDZCiKmPfTGuy8sWeHWh8tBnY8wvIjCaT+exaZUb7QzCyB5UjYZwpP1HPU3g8FBPv7ht3Ijl2ExMnM/ql99qeRTpF+dtJq3VyJ6UU6KhbAYYOdLyBr09Cj96dT8KTXti1z13DmOvDjOcBhFWtsPeO7XwK5rdkNY7ZPEhpmmmVd9ZBFTeCoYQeP2tGd/tUrjD6hKylK7GXeX9Ko0VPb8Ebm2UpoNYN3itTttFht6oxVdJc/bnWwmpB+5Rtf/YN6B3Jgaw8Zvd7AzQsGAQKA+0qlavtF/kB7yVtHuOiiRWN9svZqHsnuT6WzdIo7SDmADQxMxsV61SChy5fu3GN+HSmqjGh31aDGAs3QcyFiHt3TDb9zlehw/atC5z4+9oK2xg8lrND/57tLuJwe8AXp0w24qZoYVpfhOut4bRGH2BbxS4FsEVf05Owx/b8J7oZewzh8WcWrJl8RaImAywtQOA3Y5iMQymIZbuX/FBj5LB+tljS4Clg7N3ehITCeEZJXvtLC7Rrb8Jzefn+ANJLKlhxmlHp44tZz0O9xc0M9Sbi/BerBWSe7yuXxj/c0dS0H7dLcZz+ZHEy6lwiHPltAQGwcvz8/YaJfW44c=
