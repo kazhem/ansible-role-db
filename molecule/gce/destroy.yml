@@ -7,6 +7,12 @@
   vars:
     molecule_no_log: false
   tasks:
+    - name: DEBUG
+      debug:
+        msg:
+          - "{{ lookup('env', 'GCE_SERVICE_ACCOUNT_EMAIL') }}"
+          - "{{ lookup('env', 'GCE_CREDENTIALS_FILE') }}"
+          - "{{ lookup('env', 'GCE_PROJECT_ID') }}"
     - name: Destroy molecule instance(s)
       gce:
         instance_names: "{{ item.name }}"
