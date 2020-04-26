@@ -3,7 +3,9 @@
   hosts: localhost
   connection: local
   gather_facts: false
-  no_log: false
+  no_log: "{{ molecule_no_log }}"
+  vars:
+    molecule_no_log: false
   tasks:
     - name: Destroy molecule instance(s)
       gce:

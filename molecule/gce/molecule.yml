@@ -7,7 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: instance
-    zone: us-west1-a
+    zone: europe-west1-b
     machine_type: f1-micro
     image: debian-8
 provisioner:
