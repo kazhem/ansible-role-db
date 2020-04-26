@@ -15,6 +15,8 @@ before_install:
 - mv google_compute_engine /home/travis/.ssh/
 - chmod 0600 /home/travis/.ssh/google_compute_engine
 env:
+  matrix:
+  - GCE_CREDENTIALS_FILE="$(pwd)/credentials.json"
   global:
   - USER=travis
   - secure: l9VB1HYucFn5Y9Fw7wJ316DIEwVNdLolXIZYEvBHYhLa3/OB1kWlbfUz4C26fPwmHmksCTP26UeZ3DvMYKwbiYSJ47B1Hk+XPQA6UgJ/5qrKvdspTsVKE9XE10+F/cDHrYRNeEkpoH081caynUTwOKbJMtn6Plwutx8DQL4VASIaibNM6CMpu/NG1oVSDnlcoBgyeg2mhkck31xoHqozXKpyOlkKOpqq8IADntMjoyLmpd8vK7I/FUr0yzJ9qR0Kep8BxdaTwjPA4GDue+dcD3WWBESik+cblQclNLF/VVZgroh3X9CtXWfWCBm0LxvXlxOTlcTGlOWCIj0TwSRLPOTZpkcYENfV9p3bxBLiiEXgqcjDfr9JSdidDQGfrkkkdSmXquVOK1RAOIYPvPaeBM69ZpVIwOxJyrTxPUVIWNUwdqKCm9lojVgGxY8nhkA65K+qkhj65a9Ceg9MddOeqSZNwX+FUwlwtXhWMFzMHm9NerZVVBufy5a98yze7t9FwqZSNDhqBxsB+5gWqhtyv8/h8Grra8QmNJSYJnL1hG2IIaPmX6ZyMSNRlkxBM0tsINBGufAxkSNTSGUHh+9tB2bFBRPfZeH9YWmFeG6bt8O91B7RCn7UBXb/qK8U4fioYlRKQsp3P8RQY0JnEmMhjKix9u8aSQt2y9o0TwUUfM8=
